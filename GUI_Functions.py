@@ -1,5 +1,6 @@
 import pygame
 from pygame.locals import *
+import sys
 
 def KEY_PRESSED():
     for Event in pygame.event.get():
@@ -35,8 +36,17 @@ def KEY_PRESSED():
             if Event.key == K_7:
                 return 7
             if Event.key == K_8:
-                return 8              
+                return 8           
+            if Event.key == K_9:
+                return 9       
             
         if Event.type == pygame.QUIT:
             return 'QUIT'
     return None
+
+def SORTING_KEY_PRESSED():
+    KEY = KEY_PRESSED()
+    if KEY == "QUIT":
+        pygame.quit()
+        sys.exit()
+
